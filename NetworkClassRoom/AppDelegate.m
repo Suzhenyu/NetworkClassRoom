@@ -17,8 +17,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
-    // 如果用户未登录，显示登录页面；如果用户已登录，显示主页面
+
+    //这里需要判断一下，如果用户未登录，则跳到登录页面；如果已登录，就跳转到对应的身份的首页去
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = [LoginViewController new];
