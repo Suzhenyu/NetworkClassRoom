@@ -10,6 +10,7 @@
 #import "Student.h"
 #import "Course.h"
 #import "CourseCell.h"
+#import "StudentVideoController.h"
 
 @interface StudentCourseController ()<UITableViewDataSource, UITableViewDelegate>
 {
@@ -107,6 +108,12 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    Course *course = _courseArray[indexPath.row];
+    
+    StudentVideoController *control = [[StudentVideoController alloc] init];
+    control.course_id = course.course_id;
+    [self.navigationController pushViewController:control animated:YES];
 }
 
 @end

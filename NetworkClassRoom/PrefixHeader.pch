@@ -23,6 +23,7 @@
 #define API_STUDENT_LOGIN @"login_student.php"
 #define API_TEACHER_LOGIN @"login_teacher.php"
 #define API_STUDENT_COURSE @"student_course.php"
+#define API_VIDEOS @"videos.php"
 
 
 #endif /* PrefixHeader_pch */
