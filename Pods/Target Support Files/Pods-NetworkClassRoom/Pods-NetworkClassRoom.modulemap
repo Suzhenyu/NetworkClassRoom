@@ -1,0 +1,6 @@
+framework module Pods_NetworkClassRoom {
+  umbrella header "Pods-NetworkClassRoom-umbrella.h"
+
+  export *
+  module * { export * }
+}

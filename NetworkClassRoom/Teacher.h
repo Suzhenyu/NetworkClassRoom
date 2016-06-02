@@ -8,11 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Teacher : NSObject
+@interface Teacher : NSObject<NSCoding>
 
 @property (nonatomic, assign) int teacher_id;
 @property (nonatomic, copy) NSString *teacher_name;
-@property (nonatomic, copy) NSString *teacher_account;
-@property (nonatomic, copy) NSString *teacher_password;
 
 @end

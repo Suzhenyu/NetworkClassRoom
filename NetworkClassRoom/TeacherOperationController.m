@@ -6,17 +6,23 @@
 //  Copyright © 2016年 apple. All rights reserved.
 //
 
-#import "TeacherOperationViewController.h"
+#import "TeacherOperationController.h"
 
-@interface TeacherOperationViewController ()
+@interface TeacherOperationController ()
 
 @end
 
-@implementation TeacherOperationViewController
+@implementation TeacherOperationController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    self.tabBarController.title = @"作业区";
 }
 
 - (void)didReceiveMemoryWarning {

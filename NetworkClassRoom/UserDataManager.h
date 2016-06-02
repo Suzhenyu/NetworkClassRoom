@@ -8,14 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
-@interface DataManager : NSObject
+@interface UserDataManager : NSObject
 
 @property (nonatomic, copy, readonly) NSString *username;
 @property (nonatomic, copy, readonly) NSString *password;
+@property (nonatomic, copy, readonly) NSString *status;                //0为学生，1为教师
 
-+ (DataManager *)shareManager;
++ (UserDataManager *)shareManager;
 
-- (void)saveUsername:(NSString *)username andPassword:(NSString *)password;
+/**
+ * status 代表身份，『0』为学生，『1』为老师
+ */
+- (void)saveUsername:(NSString *)username andPassword:(NSString *)password andStatus:(NSString *)status;
 /**
  * 返回值是一个字典
  * 通过属性username作为key取得的值是『用户名』

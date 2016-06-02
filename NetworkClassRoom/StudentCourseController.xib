@@ -14,9 +14,13 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="课程" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ju-7C-dNy">
-                    <rect key="frame" x="219" y="206" width="34" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="StudentCourse" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ju-7C-dNy">
+                    <rect key="frame" x="242" y="75" width="116" height="21"/>
                     <animations/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="116" id="Noa-1k-JLR"/>
+                        <constraint firstAttribute="height" constant="21" id="vFi-Jb-eG4"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
@@ -24,6 +28,10 @@
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="9Ju-7C-dNy" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="fcB-lR-MzM"/>
+                <constraint firstItem="9Ju-7C-dNy" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="75" id="kDw-MS-tGa"/>
+            </constraints>
         </view>
     </objects>
 </document>

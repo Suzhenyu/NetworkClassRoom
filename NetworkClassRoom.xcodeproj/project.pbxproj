@@ -15,11 +15,11 @@
 		188EF1921CFDF5CC00E86D51 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 188EF1911CFDF5CC00E86D51 /* Video.m */; settings = {ASSET_TAGS = (); }; };
 		188EF1971CFDF6F300E86D51 /* TeacherCourseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 188EF1951CFDF6F300E86D51 /* TeacherCourseController.m */; settings = {ASSET_TAGS = (); }; };
 		188EF1981CFDF6F300E86D51 /* TeacherCourseController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 188EF1961CFDF6F300E86D51 /* TeacherCourseController.xib */; settings = {ASSET_TAGS = (); }; };
-		188EF19C1CFDF71300E86D51 /* TeacherOperationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 188EF19A1CFDF71300E86D51 /* TeacherOperationViewController.m */; settings = {ASSET_TAGS = (); }; };
-		188EF19D1CFDF71300E86D51 /* TeacherOperationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 188EF19B1CFDF71300E86D51 /* TeacherOperationViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		188EF19C1CFDF71300E86D51 /* TeacherOperationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 188EF19A1CFDF71300E86D51 /* TeacherOperationController.m */; settings = {ASSET_TAGS = (); }; };
+		188EF19D1CFDF71300E86D51 /* TeacherOperationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 188EF19B1CFDF71300E86D51 /* TeacherOperationController.xib */; settings = {ASSET_TAGS = (); }; };
 		188EF1A11CFDF72400E86D51 /* TeacherMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 188EF19F1CFDF72400E86D51 /* TeacherMeViewController.m */; settings = {ASSET_TAGS = (); }; };
 		188EF1A21CFDF72400E86D51 /* TeacherMeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 188EF1A01CFDF72400E86D51 /* TeacherMeViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		188EF1F51CFEED1300E86D51 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 188EF1F21CFEED1300E86D51 /* DataManager.m */; settings = {ASSET_TAGS = (); }; };
+		188EF1F51CFEED1300E86D51 /* UserDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 188EF1F21CFEED1300E86D51 /* UserDataManager.m */; settings = {ASSET_TAGS = (); }; };
 		188EF1F61CFEED1300E86D51 /* SZYKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 188EF1F41CFEED1300E86D51 /* SZYKeychain.m */; settings = {ASSET_TAGS = (); }; };
 		18FE6F2E1CF6D2E4000B0A90 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FE6F2D1CF6D2E4000B0A90 /* main.m */; };
 		18FE6F311CF6D2E4000B0A90 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FE6F301CF6D2E4000B0A90 /* AppDelegate.m */; };
@@ -35,6 +35,7 @@
 		18FE6F581CF6E8C6000B0A90 /* StudentOperationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18FE6F561CF6E8C6000B0A90 /* StudentOperationController.xib */; settings = {ASSET_TAGS = (); }; };
 		18FE6F5C1CF6E8E4000B0A90 /* StudentMeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FE6F5A1CF6E8E4000B0A90 /* StudentMeController.m */; settings = {ASSET_TAGS = (); }; };
 		18FE6F5D1CF6E8E4000B0A90 /* StudentMeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18FE6F5B1CF6E8E4000B0A90 /* StudentMeController.xib */; settings = {ASSET_TAGS = (); }; };
+		C20AE7E7C503253FE0846AB8 /* Pods_NetworkClassRoom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A2612B483DFD513095A04C2 /* Pods_NetworkClassRoom.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,14 +54,14 @@
 		188EF1941CFDF6F300E86D51 /* TeacherCourseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeacherCourseController.h; sourceTree = "<group>"; };
 		188EF1951CFDF6F300E86D51 /* TeacherCourseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeacherCourseController.m; sourceTree = "<group>"; };
 		188EF1961CFDF6F300E86D51 /* TeacherCourseController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TeacherCourseController.xib; sourceTree = "<group>"; };
-		188EF1991CFDF71300E86D51 /* TeacherOperationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeacherOperationViewController.h; sourceTree = "<group>"; };
-		188EF19A1CFDF71300E86D51 /* TeacherOperationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeacherOperationViewController.m; sourceTree = "<group>"; };
-		188EF19B1CFDF71300E86D51 /* TeacherOperationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TeacherOperationViewController.xib; sourceTree = "<group>"; };
+		188EF1991CFDF71300E86D51 /* TeacherOperationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeacherOperationController.h; sourceTree = "<group>"; };
+		188EF19A1CFDF71300E86D51 /* TeacherOperationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeacherOperationController.m; sourceTree = "<group>"; };
+		188EF19B1CFDF71300E86D51 /* TeacherOperationController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TeacherOperationController.xib; sourceTree = "<group>"; };
 		188EF19E1CFDF72400E86D51 /* TeacherMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeacherMeViewController.h; sourceTree = "<group>"; };
 		188EF19F1CFDF72400E86D51 /* TeacherMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeacherMeViewController.m; sourceTree = "<group>"; };
 		188EF1A01CFDF72400E86D51 /* TeacherMeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TeacherMeViewController.xib; sourceTree = "<group>"; };
-		188EF1F11CFEED1300E86D51 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
-		188EF1F21CFEED1300E86D51 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
+		188EF1F11CFEED1300E86D51 /* UserDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDataManager.h; sourceTree = "<group>"; };
+		188EF1F21CFEED1300E86D51 /* UserDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDataManager.m; sourceTree = "<group>"; };
 		188EF1F31CFEED1300E86D51 /* SZYKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZYKeychain.h; sourceTree = "<group>"; };
 		188EF1F41CFEED1300E86D51 /* SZYKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZYKeychain.m; sourceTree = "<group>"; };
 		18FE6F291CF6D2E4000B0A90 /* NetworkClassRoom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkClassRoom.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,6 +86,9 @@
 		18FE6F591CF6E8E4000B0A90 /* StudentMeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentMeController.h; sourceTree = "<group>"; };
 		18FE6F5A1CF6E8E4000B0A90 /* StudentMeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentMeController.m; sourceTree = "<group>"; };
 		18FE6F5B1CF6E8E4000B0A90 /* StudentMeController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StudentMeController.xib; sourceTree = "<group>"; };
+		7A2612B483DFD513095A04C2 /* Pods_NetworkClassRoom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NetworkClassRoom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6A5156CB77567A82AF1775E /* Pods-NetworkClassRoom.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetworkClassRoom.release.xcconfig"; path = "Pods/Target Support Files/Pods-NetworkClassRoom/Pods-NetworkClassRoom.release.xcconfig"; sourceTree = "<group>"; };
+		DFC00438995ACA739090220D /* Pods-NetworkClassRoom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetworkClassRoom.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NetworkClassRoom/Pods-NetworkClassRoom.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C20AE7E7C503253FE0846AB8 /* Pods_NetworkClassRoom.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,8 +106,8 @@
 		188EF1801CFDBA6E00E86D51 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				188EF1F11CFEED1300E86D51 /* DataManager.h */,
-				188EF1F21CFEED1300E86D51 /* DataManager.m */,
+				188EF1F11CFEED1300E86D51 /* UserDataManager.h */,
+				188EF1F21CFEED1300E86D51 /* UserDataManager.m */,
 				188EF1F31CFEED1300E86D51 /* SZYKeychain.h */,
 				188EF1F41CFEED1300E86D51 /* SZYKeychain.m */,
 				188EF1811CFDC07800E86D51 /* Course.h */,
@@ -127,9 +132,9 @@
 				188EF1941CFDF6F300E86D51 /* TeacherCourseController.h */,
 				188EF1951CFDF6F300E86D51 /* TeacherCourseController.m */,
 				188EF1961CFDF6F300E86D51 /* TeacherCourseController.xib */,
-				188EF1991CFDF71300E86D51 /* TeacherOperationViewController.h */,
-				188EF19A1CFDF71300E86D51 /* TeacherOperationViewController.m */,
-				188EF19B1CFDF71300E86D51 /* TeacherOperationViewController.xib */,
+				188EF1991CFDF71300E86D51 /* TeacherOperationController.h */,
+				188EF19A1CFDF71300E86D51 /* TeacherOperationController.m */,
+				188EF19B1CFDF71300E86D51 /* TeacherOperationController.xib */,
 				188EF19E1CFDF72400E86D51 /* TeacherMeViewController.h */,
 				188EF19F1CFDF72400E86D51 /* TeacherMeViewController.m */,
 				188EF1A01CFDF72400E86D51 /* TeacherMeViewController.xib */,
@@ -142,6 +147,8 @@
 			children = (
 				18FE6F2B1CF6D2E4000B0A90 /* NetworkClassRoom */,
 				18FE6F2A1CF6D2E4000B0A90 /* Products */,
+				6991418350C0DA217F5B858F /* Pods */,
+				A4F6914F5E6B5D3A66396216 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -199,6 +206,23 @@
 			name = Student;
 			sourceTree = "<group>";
 		};
+		6991418350C0DA217F5B858F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DFC00438995ACA739090220D /* Pods-NetworkClassRoom.debug.xcconfig */,
+				B6A5156CB77567A82AF1775E /* Pods-NetworkClassRoom.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A4F6914F5E6B5D3A66396216 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7A2612B483DFD513095A04C2 /* Pods_NetworkClassRoom.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -206,9 +230,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 18FE6F401CF6D2E4000B0A90 /* Build configuration list for PBXNativeTarget "NetworkClassRoom" */;
 			buildPhases = (
+				3E1803975723239C2B2F3B97 /* 📦 Check Pods Manifest.lock */,
 				18FE6F251CF6D2E4000B0A90 /* Sources */,
 				18FE6F261CF6D2E4000B0A90 /* Frameworks */,
 				18FE6F271CF6D2E4000B0A90 /* Resources */,
+				78B74FEB3B5FC018B6EC51F3 /* 📦 Embed Pods Frameworks */,
+				EFC13E2C6ADC29004E3B7C01 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -262,7 +289,7 @@
 				18FE6F391CF6D2E4000B0A90 /* Assets.xcassets in Resources */,
 				18FE6F581CF6E8C6000B0A90 /* StudentOperationController.xib in Resources */,
 				18FE6F371CF6D2E4000B0A90 /* Main.storyboard in Resources */,
-				188EF19D1CFDF71300E86D51 /* TeacherOperationViewController.xib in Resources */,
+				188EF19D1CFDF71300E86D51 /* TeacherOperationController.xib in Resources */,
 				188EF1981CFDF6F300E86D51 /* TeacherCourseController.xib in Resources */,
 				18FE6F5D1CF6E8E4000B0A90 /* StudentMeController.xib in Resources */,
 				18FE6F531CF6E894000B0A90 /* StudentCourseController.xib in Resources */,
@@ -270,6 +297,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3E1803975723239C2B2F3B97 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		78B74FEB3B5FC018B6EC51F3 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NetworkClassRoom/Pods-NetworkClassRoom-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EFC13E2C6ADC29004E3B7C01 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NetworkClassRoom/Pods-NetworkClassRoom-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		18FE6F251CF6D2E4000B0A90 /* Sources */ = {
@@ -280,12 +355,12 @@
 				188EF1A11CFDF72400E86D51 /* TeacherMeViewController.m in Sources */,
 				188EF18C1CFDF4A000E86D51 /* Student.m in Sources */,
 				18FE6F461CF6E4BF000B0A90 /* LoginViewController.m in Sources */,
-				188EF1F51CFEED1300E86D51 /* DataManager.m in Sources */,
+				188EF1F51CFEED1300E86D51 /* UserDataManager.m in Sources */,
 				18FE6F341CF6D2E4000B0A90 /* ViewController.m in Sources */,
 				188EF1891CFDF44300E86D51 /* SelectCourse.m in Sources */,
 				18FE6F311CF6D2E4000B0A90 /* AppDelegate.m in Sources */,
 				18FE6F521CF6E894000B0A90 /* StudentCourseController.m in Sources */,
-				188EF19C1CFDF71300E86D51 /* TeacherOperationViewController.m in Sources */,
+				188EF19C1CFDF71300E86D51 /* TeacherOperationController.m in Sources */,
 				188EF1971CFDF6F300E86D51 /* TeacherCourseController.m in Sources */,
 				188EF1831CFDC07800E86D51 /* Course.m in Sources */,
 				18FE6F2E1CF6D2E4000B0A90 /* main.m in Sources */,
@@ -401,23 +476,27 @@
 		};
 		18FE6F411CF6D2E4000B0A90 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DFC00438995ACA739090220D /* Pods-NetworkClassRoom.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = NetworkClassRoom/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cc.suzhenyu.NetworkClassRoom;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 			};
 			name = Debug;
 		};
 		18FE6F421CF6D2E4000B0A90 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6A5156CB77567A82AF1775E /* Pods-NetworkClassRoom.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = NetworkClassRoom/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cc.suzhenyu.NetworkClassRoom;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 			};
 			name = Release;
 		};

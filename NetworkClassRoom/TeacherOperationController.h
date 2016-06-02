@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TeacherOperationViewController : UIViewController
+@interface TeacherOperationController : UIViewController
 
 @end
