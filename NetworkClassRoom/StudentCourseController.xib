@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StudentCourseController">
             <connections>
+                <outlet property="tableView" destination="RRi-hR-yCo" id="iPR-IU-mmN"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,24 +15,25 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="StudentCourse" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ju-7C-dNy">
-                    <rect key="frame" x="242" y="75" width="116" height="21"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RRi-hR-yCo">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                     <animations/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="116" id="Noa-1k-JLR"/>
-                        <constraint firstAttribute="height" constant="21" id="vFi-Jb-eG4"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="05y-c6-J1c"/>
+                        <outlet property="delegate" destination="-1" id="rWa-rc-mgx"/>
+                    </connections>
+                </tableView>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="9Ju-7C-dNy" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="fcB-lR-MzM"/>
-                <constraint firstItem="9Ju-7C-dNy" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="75" id="kDw-MS-tGa"/>
+                <constraint firstItem="RRi-hR-yCo" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="9Ir-L8-jxF"/>
+                <constraint firstAttribute="trailing" secondItem="RRi-hR-yCo" secondAttribute="trailing" id="9Pf-c4-nVa"/>
+                <constraint firstAttribute="bottom" secondItem="RRi-hR-yCo" secondAttribute="bottom" id="Z3i-nG-MLq"/>
+                <constraint firstItem="RRi-hR-yCo" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="zFj-t6-caS"/>
             </constraints>
+            <point key="canvasLocation" x="405" y="389"/>
         </view>
     </objects>
 </document>

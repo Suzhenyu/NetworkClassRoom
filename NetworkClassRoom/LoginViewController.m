@@ -7,7 +7,6 @@
 //
 
 #import "LoginViewController.h"
-#import "MBProgressHUD.h"
 
 #import "UserDataManager.h"
 
@@ -21,16 +20,11 @@
 #import "TeacherOperationController.h"
 #import "TeacherMeViewController.h"
 
-const NSTimeInterval kAlertViewInterval = 1.0f;
-NSString * const kUserDefaults_Student = @"UserDefaults_Student";
-NSString * const kUserDefaults_Teacher = @"UserDefaults_Teacher";
-
 @interface LoginViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *tfAccount;
 @property (weak, nonatomic) IBOutlet UITextField *tfPassword;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *statusControl;
-
 
 @end
 
@@ -45,15 +39,14 @@ NSString * const kUserDefaults_Teacher = @"UserDefaults_Teacher";
     NSString *password = self.tfPassword.text;
     NSInteger status = self.statusControl.selectedSegmentIndex;
     if (account == nil || [account isEqualToString:@""]) {
-        [self showAlert:@"请输入帐号"];
-        
+        [AlertLabel showText:@"请输入帐号" to:self.view hideAfterDelay:1.f];
     }else if (password == nil || [password isEqualToString:@""]) {
-        [self showAlert:@"请输入密码"];
+        [AlertLabel showText:@"请输入密码" to:self.view hideAfterDelay:kAlertViewInterval];
     }else {
         if (status == 0) {      //学生
             
             NSString *urlString
-            = [NSString stringWithFormat:@"http://121.42.162.159/login_student.php?account=%@&password=%@",account,password];
+            = [NSString stringWithFormat:@"%@/%@?account=%@&password=%@",API_ROOTPATH,API_STUDENT_LOGIN,account,password];
             NSURL *url = [NSURL URLWithString:urlString];
             NSURLSession *session = [NSURLSession sharedSession];
             [[session dataTaskWithURL:url
@@ -95,7 +88,9 @@ NSString * const kUserDefaults_Teacher = @"UserDefaults_Teacher";
                            });
                        }else {
                            dispatch_sync(dispatch_get_main_queue(), ^{
-                               [self showAlert:@"帐号或密码不正确，请重试！"];
+                               [AlertLabel showText:@"帐号或密码不正确，请重试！"
+                                                 to:self.view
+                                     hideAfterDelay:kAlertViewInterval];
                            });
                            
                        }
@@ -103,7 +98,7 @@ NSString * const kUserDefaults_Teacher = @"UserDefaults_Teacher";
             
         }else {                 //教师
             NSString *urlString
-            = [NSString stringWithFormat:@"http://121.42.162.159/login_teacher.php?account=%@&password=%@", account, password];
+            = [NSString stringWithFormat:@"%@/%@?account=%@&password=%@", API_ROOTPATH, API_TEACHER_LOGIN, account, password];
             NSURL *url = [NSURL URLWithString:urlString];
             NSURLSession *session = [NSURLSession sharedSession];
             [[session dataTaskWithURL:url
@@ -145,7 +140,9 @@ NSString * const kUserDefaults_Teacher = @"UserDefaults_Teacher";
                             });
                         }else {
                             dispatch_sync(dispatch_get_main_queue(), ^{
-                                [self showAlert:@"帐号或密码不正确，请重试！"];
+                                [AlertLabel showText:@"帐号或密码不正确，请重试！"
+                                                  to:self.view
+                                      hideAfterDelay:kAlertViewInterval];
                             });
                         }
                     }] resume];
@@ -153,26 +150,9 @@ NSString * const kUserDefaults_Teacher = @"UserDefaults_Teacher";
     }
 }
 
-- (void)showAlert:(NSString *)text {
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    hud.mode = MBProgressHUDModeText;
-    hud.labelText = text;
-    [hud hide:YES afterDelay:kAlertViewInterval];
-}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

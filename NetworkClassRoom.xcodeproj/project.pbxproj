@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		182B3BCA1D0028160097002C /* CourseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 182B3BC91D0028160097002C /* CourseCell.m */; settings = {ASSET_TAGS = (); }; };
+		182B3BCF1D005FF20097002C /* AlertLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 182B3BCE1D005FF20097002C /* AlertLabel.m */; settings = {ASSET_TAGS = (); }; };
 		188EF1831CFDC07800E86D51 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = 188EF1821CFDC07800E86D51 /* Course.m */; settings = {ASSET_TAGS = (); }; };
 		188EF1861CFDF40700E86D51 /* Major.m in Sources */ = {isa = PBXBuildFile; fileRef = 188EF1851CFDF40700E86D51 /* Major.m */; settings = {ASSET_TAGS = (); }; };
 		188EF1891CFDF44300E86D51 /* SelectCourse.m in Sources */ = {isa = PBXBuildFile; fileRef = 188EF1881CFDF44300E86D51 /* SelectCourse.m */; settings = {ASSET_TAGS = (); }; };
@@ -39,6 +41,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		182B3BC81D0028160097002C /* CourseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseCell.h; sourceTree = "<group>"; };
+		182B3BC91D0028160097002C /* CourseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseCell.m; sourceTree = "<group>"; };
+		182B3BCB1D0056640097002C /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		182B3BCD1D005FF20097002C /* AlertLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertLabel.h; sourceTree = "<group>"; };
+		182B3BCE1D005FF20097002C /* AlertLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertLabel.m; sourceTree = "<group>"; };
 		188EF1811CFDC07800E86D51 /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
 		188EF1821CFDC07800E86D51 /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
 		188EF1841CFDF40700E86D51 /* Major.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Major.h; sourceTree = "<group>"; };
@@ -103,6 +110,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		182B3BC61D0027CF0097002C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				182B3BC71D0027E50097002C /* Cell */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		182B3BC71D0027E50097002C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				182B3BC81D0028160097002C /* CourseCell.h */,
+				182B3BC91D0028160097002C /* CourseCell.m */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		182B3BCC1D005FC50097002C /* Utills */ = {
+			isa = PBXGroup;
+			children = (
+				182B3BCD1D005FF20097002C /* AlertLabel.h */,
+				182B3BCE1D005FF20097002C /* AlertLabel.m */,
+			);
+			name = Utills;
+			sourceTree = "<group>";
+		};
 		188EF1801CFDBA6E00E86D51 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,18 +196,21 @@
 		18FE6F2B1CF6D2E4000B0A90 /* NetworkClassRoom */ = {
 			isa = PBXGroup;
 			children = (
-				188EF1801CFDBA6E00E86D51 /* Model */,
-				188EF1931CFDF6A800E86D51 /* Teacher */,
-				18FE6F4E1CF6E86A000B0A90 /* Student */,
 				18FE6F2F1CF6D2E4000B0A90 /* AppDelegate.h */,
 				18FE6F301CF6D2E4000B0A90 /* AppDelegate.m */,
 				18FE6F431CF6E4BF000B0A90 /* LoginViewController.h */,
 				18FE6F441CF6E4BF000B0A90 /* LoginViewController.m */,
 				18FE6F451CF6E4BF000B0A90 /* LoginViewController.xib */,
+				182B3BCC1D005FC50097002C /* Utills */,
+				182B3BC61D0027CF0097002C /* View */,
+				188EF1801CFDBA6E00E86D51 /* Model */,
+				188EF1931CFDF6A800E86D51 /* Teacher */,
+				18FE6F4E1CF6E86A000B0A90 /* Student */,
 				18FE6F381CF6D2E4000B0A90 /* Assets.xcassets */,
 				18FE6F3A1CF6D2E4000B0A90 /* LaunchScreen.storyboard */,
 				18FE6F3D1CF6D2E4000B0A90 /* Info.plist */,
 				18FE6F2C1CF6D2E4000B0A90 /* Supporting Files */,
+				182B3BCB1D0056640097002C /* PrefixHeader.pch */,
 			);
 			path = NetworkClassRoom;
 			sourceTree = "<group>";
@@ -360,6 +396,7 @@
 				188EF1891CFDF44300E86D51 /* SelectCourse.m in Sources */,
 				18FE6F311CF6D2E4000B0A90 /* AppDelegate.m in Sources */,
 				18FE6F521CF6E894000B0A90 /* StudentCourseController.m in Sources */,
+				182B3BCA1D0028160097002C /* CourseCell.m in Sources */,
 				188EF19C1CFDF71300E86D51 /* TeacherOperationController.m in Sources */,
 				188EF1971CFDF6F300E86D51 /* TeacherCourseController.m in Sources */,
 				188EF1831CFDC07800E86D51 /* Course.m in Sources */,
@@ -369,6 +406,7 @@
 				18FE6F5C1CF6E8E4000B0A90 /* StudentMeController.m in Sources */,
 				18FE6F571CF6E8C6000B0A90 /* StudentOperationController.m in Sources */,
 				188EF1921CFDF5CC00E86D51 /* Video.m in Sources */,
+				182B3BCF1D005FF20097002C /* AlertLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,6 +517,8 @@
 			baseConfigurationReference = DFC00438995ACA739090220D /* Pods-NetworkClassRoom.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/NetworkClassRoom/PrefixHeader.pch";
 				INFOPLIST_FILE = NetworkClassRoom/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cc.suzhenyu.NetworkClassRoom;
@@ -492,6 +532,8 @@
 			baseConfigurationReference = B6A5156CB77567A82AF1775E /* Pods-NetworkClassRoom.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/NetworkClassRoom/PrefixHeader.pch";
 				INFOPLIST_FILE = NetworkClassRoom/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cc.suzhenyu.NetworkClassRoom;

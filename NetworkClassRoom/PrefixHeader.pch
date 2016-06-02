@@ -1,0 +1,28 @@
+//
+//  PrefixHeader.pch
+//  NetworkClassRoom
+//
+//  Created by apple on 16/6/2.
+//  Copyright © 2016年 apple. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "AlertLabel.h"
+
+#define kAlertViewInterval 1.f
+
+#define kUserDefaults_Student @"UserDefaults_Student"
+#define kUserDefaults_Teacher @"UserDefaults_Teacher"
+
+#define API_ROOTPATH @"http://121.42.162.159"
+#define API_STUDENT_LOGIN @"login_student.php"
+#define API_TEACHER_LOGIN @"login_teacher.php"
+#define API_STUDENT_COURSE @"student_course.php"
+
+
+#endif /* PrefixHeader_pch */
