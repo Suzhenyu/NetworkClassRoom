@@ -169,7 +169,7 @@
 //    Video *video = [_videoArray objectAtIndex:indexPath.row];
     
     self.moviePlayerViewController=nil;//保证每次点击都重新创建视频播放控制器视图，避免再次点击时由于不播放的问题
-    _index = indexPath.row;
+    _index = (int)indexPath.row;
     [self presentMoviePlayerViewControllerAnimated:self.moviePlayerViewController];
 }
 

@@ -16,6 +16,9 @@
 
 #define kAlertViewInterval 1.f
 
+#define RONGYUN_APPKEY @"25wehl3uwn8jw"                     //融云
+#define RONGYUN_APPSER @"PyuCGPkl3c"
+
 #define kUserDefaults_Student @"UserDefaults_Student"
 #define kUserDefaults_Teacher @"UserDefaults_Teacher"
 

@@ -2,12 +2,12 @@
 //  StudentOperationController.h
 //  NetworkClassRoom
 //
-//  Created by apple on 16/5/26.
+//  Created by apple on 16/6/12.
 //  Copyright © 2016年 apple. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <RongIMKit/RongIMKit.h>
 
-@interface StudentOperationController : UIViewController
+@interface StudentOperationController : RCConversationListViewController
 
 @end

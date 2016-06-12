@@ -11,6 +11,7 @@
 		182B3BCF1D005FF20097002C /* AlertLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 182B3BCE1D005FF20097002C /* AlertLabel.m */; settings = {ASSET_TAGS = (); }; };
 		182B3C1C1D0093180097002C /* StudentVideoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 182B3C1A1D0093180097002C /* StudentVideoController.m */; settings = {ASSET_TAGS = (); }; };
 		182B3C1D1D0093180097002C /* StudentVideoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 182B3C1B1D0093180097002C /* StudentVideoController.xib */; settings = {ASSET_TAGS = (); }; };
+		183A88AA1D0D0C76004D0527 /* StudentOperationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 183A88A91D0D0C76004D0527 /* StudentOperationController.m */; settings = {ASSET_TAGS = (); }; };
 		188EF1831CFDC07800E86D51 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = 188EF1821CFDC07800E86D51 /* Course.m */; settings = {ASSET_TAGS = (); }; };
 		188EF1861CFDF40700E86D51 /* Major.m in Sources */ = {isa = PBXBuildFile; fileRef = 188EF1851CFDF40700E86D51 /* Major.m */; settings = {ASSET_TAGS = (); }; };
 		188EF1891CFDF44300E86D51 /* SelectCourse.m in Sources */ = {isa = PBXBuildFile; fileRef = 188EF1881CFDF44300E86D51 /* SelectCourse.m */; settings = {ASSET_TAGS = (); }; };
@@ -35,8 +36,6 @@
 		18FE6F471CF6E4BF000B0A90 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18FE6F451CF6E4BF000B0A90 /* LoginViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		18FE6F521CF6E894000B0A90 /* StudentCourseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FE6F501CF6E894000B0A90 /* StudentCourseController.m */; settings = {ASSET_TAGS = (); }; };
 		18FE6F531CF6E894000B0A90 /* StudentCourseController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18FE6F511CF6E894000B0A90 /* StudentCourseController.xib */; settings = {ASSET_TAGS = (); }; };
-		18FE6F571CF6E8C6000B0A90 /* StudentOperationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FE6F551CF6E8C6000B0A90 /* StudentOperationController.m */; settings = {ASSET_TAGS = (); }; };
-		18FE6F581CF6E8C6000B0A90 /* StudentOperationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18FE6F561CF6E8C6000B0A90 /* StudentOperationController.xib */; settings = {ASSET_TAGS = (); }; };
 		18FE6F5C1CF6E8E4000B0A90 /* StudentMeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FE6F5A1CF6E8E4000B0A90 /* StudentMeController.m */; settings = {ASSET_TAGS = (); }; };
 		18FE6F5D1CF6E8E4000B0A90 /* StudentMeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18FE6F5B1CF6E8E4000B0A90 /* StudentMeController.xib */; settings = {ASSET_TAGS = (); }; };
 		C20AE7E7C503253FE0846AB8 /* Pods_NetworkClassRoom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A2612B483DFD513095A04C2 /* Pods_NetworkClassRoom.framework */; };
@@ -51,6 +50,8 @@
 		182B3C191D0093180097002C /* StudentVideoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentVideoController.h; sourceTree = "<group>"; };
 		182B3C1A1D0093180097002C /* StudentVideoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentVideoController.m; sourceTree = "<group>"; };
 		182B3C1B1D0093180097002C /* StudentVideoController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StudentVideoController.xib; sourceTree = "<group>"; };
+		183A88A81D0D0C76004D0527 /* StudentOperationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentOperationController.h; sourceTree = "<group>"; };
+		183A88A91D0D0C76004D0527 /* StudentOperationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentOperationController.m; sourceTree = "<group>"; };
 		188EF1811CFDC07800E86D51 /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
 		188EF1821CFDC07800E86D51 /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
 		188EF1841CFDF40700E86D51 /* Major.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Major.h; sourceTree = "<group>"; };
@@ -92,9 +93,6 @@
 		18FE6F4F1CF6E894000B0A90 /* StudentCourseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentCourseController.h; sourceTree = "<group>"; };
 		18FE6F501CF6E894000B0A90 /* StudentCourseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentCourseController.m; sourceTree = "<group>"; };
 		18FE6F511CF6E894000B0A90 /* StudentCourseController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StudentCourseController.xib; sourceTree = "<group>"; };
-		18FE6F541CF6E8C6000B0A90 /* StudentOperationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentOperationController.h; sourceTree = "<group>"; };
-		18FE6F551CF6E8C6000B0A90 /* StudentOperationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentOperationController.m; sourceTree = "<group>"; };
-		18FE6F561CF6E8C6000B0A90 /* StudentOperationController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StudentOperationController.xib; sourceTree = "<group>"; };
 		18FE6F591CF6E8E4000B0A90 /* StudentMeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentMeController.h; sourceTree = "<group>"; };
 		18FE6F5A1CF6E8E4000B0A90 /* StudentMeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentMeController.m; sourceTree = "<group>"; };
 		18FE6F5B1CF6E8E4000B0A90 /* StudentMeController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StudentMeController.xib; sourceTree = "<group>"; };
@@ -240,9 +238,8 @@
 				182B3C191D0093180097002C /* StudentVideoController.h */,
 				182B3C1A1D0093180097002C /* StudentVideoController.m */,
 				182B3C1B1D0093180097002C /* StudentVideoController.xib */,
-				18FE6F541CF6E8C6000B0A90 /* StudentOperationController.h */,
-				18FE6F551CF6E8C6000B0A90 /* StudentOperationController.m */,
-				18FE6F561CF6E8C6000B0A90 /* StudentOperationController.xib */,
+				183A88A81D0D0C76004D0527 /* StudentOperationController.h */,
+				183A88A91D0D0C76004D0527 /* StudentOperationController.m */,
 				18FE6F591CF6E8E4000B0A90 /* StudentMeController.h */,
 				18FE6F5A1CF6E8E4000B0A90 /* StudentMeController.m */,
 				18FE6F5B1CF6E8E4000B0A90 /* StudentMeController.xib */,
@@ -332,7 +329,6 @@
 				182B3C1D1D0093180097002C /* StudentVideoController.xib in Resources */,
 				18FE6F3C1CF6D2E4000B0A90 /* LaunchScreen.storyboard in Resources */,
 				18FE6F391CF6D2E4000B0A90 /* Assets.xcassets in Resources */,
-				18FE6F581CF6E8C6000B0A90 /* StudentOperationController.xib in Resources */,
 				18FE6F371CF6D2E4000B0A90 /* Main.storyboard in Resources */,
 				188EF19D1CFDF71300E86D51 /* TeacherOperationController.xib in Resources */,
 				188EF1981CFDF6F300E86D51 /* TeacherCourseController.xib in Resources */,
@@ -413,7 +409,7 @@
 				188EF1861CFDF40700E86D51 /* Major.m in Sources */,
 				188EF1F61CFEED1300E86D51 /* SZYKeychain.m in Sources */,
 				18FE6F5C1CF6E8E4000B0A90 /* StudentMeController.m in Sources */,
-				18FE6F571CF6E8C6000B0A90 /* StudentOperationController.m in Sources */,
+				183A88AA1D0D0C76004D0527 /* StudentOperationController.m in Sources */,
 				182B3C1C1D0093180097002C /* StudentVideoController.m in Sources */,
 				188EF1921CFDF5CC00E86D51 /* Video.m in Sources */,
 				182B3BCF1D005FF20097002C /* AlertLabel.m in Sources */,

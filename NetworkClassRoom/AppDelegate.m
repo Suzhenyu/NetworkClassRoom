@@ -15,6 +15,7 @@
 #import "TeacherCourseController.h"
 #import "TeacherOperationController.h"
 #import "TeacherMeViewController.h"
+#import <RongIMKit/RongIMKit.h>
 
 #import "UserDataManager.h"
 
@@ -33,6 +34,8 @@
     [self.window makeKeyAndVisible];
     
     [self setSelfWindowRootViewController];
+    
+    [[RCIM sharedRCIM] initWithAppKey:RONGYUN_APPKEY];
     
     return YES;
 }
