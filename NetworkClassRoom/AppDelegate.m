@@ -16,6 +16,7 @@
 #import "TeacherOperationController.h"
 #import "TeacherMeViewController.h"
 #import <RongIMKit/RongIMKit.h>
+#import "AFNetworkActivityIndicatorManager.h"
 
 #import "UserDataManager.h"
 
@@ -36,6 +37,8 @@
     [self setSelfWindowRootViewController];
     
     [[RCIM sharedRCIM] initWithAppKey:RONGYUN_APPKEY];
+    
+    [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
     
     return YES;
 }

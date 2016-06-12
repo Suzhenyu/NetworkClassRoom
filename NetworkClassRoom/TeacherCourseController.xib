@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TeacherCourseController">
             <connections>
+                <outlet property="tableView" destination="Udc-V7-w4D" id="3ZR-9R-h9i"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,23 +16,23 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TeacherCourse" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7P7-Pr-GzR">
-                    <rect key="frame" x="242" y="71" width="117" height="21"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Udc-V7-w4D">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                     <animations/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="117" id="BhC-KO-JfU"/>
-                        <constraint firstAttribute="height" constant="21" id="owx-b0-kTb"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="W5j-XI-x5F"/>
+                        <outlet property="delegate" destination="-1" id="1WG-aA-Q9E"/>
+                    </connections>
+                </tableView>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="7P7-Pr-GzR" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="D2I-uO-trO"/>
-                <constraint firstItem="7P7-Pr-GzR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="71" id="izQ-XV-CPM"/>
+                <constraint firstAttribute="trailing" secondItem="Udc-V7-w4D" secondAttribute="trailing" id="1zT-gB-1kM"/>
+                <constraint firstItem="Udc-V7-w4D" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="p2h-g7-T06"/>
+                <constraint firstAttribute="bottom" secondItem="Udc-V7-w4D" secondAttribute="bottom" id="urS-ue-UwZ"/>
+                <constraint firstItem="Udc-V7-w4D" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="vbJ-07-z6N"/>
             </constraints>
         </view>
     </objects>

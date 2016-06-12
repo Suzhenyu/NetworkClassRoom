@@ -1,13 +1,13 @@
 //
-//  TeacherOperationViewController.h
-//  NetworkClassRoom
+//  TeacherOperationController.h
+//  
 //
-//  Created by apple on 16/6/1.
-//  Copyright © 2016年 apple. All rights reserved.
+//  Created by apple on 16/6/12.
+//
 //
 
-#import <UIKit/UIKit.h>
+#import <RongIMKit/RongIMKit.h>
 
-@interface TeacherOperationController : UIViewController
+@interface TeacherOperationController : RCConversationListViewController
 
 @end
