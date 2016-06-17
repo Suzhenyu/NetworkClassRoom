@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StudentMeController">
             <connections>
+                <outlet property="nameLabel" destination="ui3-bM-M17" id="CVa-Rn-Aje"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -15,16 +16,51 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="我的" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cr8-Lg-txB">
-                    <rect key="frame" x="170" y="217" width="34" height="21"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="head" translatesAutoresizingMaskIntoConstraints="NO" id="Hmr-v4-kq9">
+                    <rect key="frame" x="250" y="94" width="100" height="100"/>
                     <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="yvm-QD-kqr"/>
+                        <constraint firstAttribute="width" constant="100" id="zb0-ZH-kr7"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名字" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ui3-bM-M17">
+                    <rect key="frame" x="249" y="224" width="103" height="31"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="31" id="SUb-gi-Vrp"/>
+                        <constraint firstAttribute="width" constant="103" id="d6w-lR-Rp4"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ke8-ck-Qoe">
+                    <rect key="frame" x="270" y="500" width="60" height="30"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="Pft-Wa-bjG"/>
+                        <constraint firstAttribute="width" constant="60" id="z37-Pk-xWi"/>
+                    </constraints>
+                    <state key="normal" title="退出登录"/>
+                    <connections>
+                        <action selector="leaveloginAction:" destination="-1" eventType="touchUpInside" id="4zW-JR-CmU"/>
+                    </connections>
+                </button>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="ke8-ck-Qoe" secondAttribute="bottom" constant="70" id="4wz-DY-XJH"/>
+                <constraint firstItem="ui3-bM-M17" firstAttribute="top" secondItem="Hmr-v4-kq9" secondAttribute="bottom" constant="30" id="9aa-Ii-hh8"/>
+                <constraint firstItem="Hmr-v4-kq9" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="94" id="Dy1-Ti-gzx"/>
+                <constraint firstItem="ui3-bM-M17" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="hDb-Lt-80N"/>
+                <constraint firstItem="ke8-ck-Qoe" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="oOj-J2-6yT"/>
+                <constraint firstItem="Hmr-v4-kq9" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="xJr-Q9-HZC"/>
+            </constraints>
         </view>
     </objects>
+    <resources>
+        <image name="head" width="30" height="30"/>
+    </resources>
 </document>

@@ -7,8 +7,13 @@
 //
 
 #import "StudentMeController.h"
+#import "Student.h"
+#import "UserDataManager.h"
+#import "LoginViewController.h"
 
 @interface StudentMeController ()
+
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 
 @end
 
@@ -16,7 +21,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    NSData *studentData = [[NSUserDefaults standardUserDefaults] objectForKey:kUserDefaults_Student];
+    Student *student = [NSKeyedUnarchiver unarchiveObjectWithData:studentData];
+    self.nameLabel.text = student.student_name;
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -24,20 +32,23 @@
     
     self.tabBarController.title = @"用户中心";
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)leaveloginAction:(id)sender {
+    
+    //UIAlertControllerStyleAlert 警示框
+    UIAlertController *alert1=[UIAlertController alertControllerWithTitle:@"退出登录" message:nil preferredStyle:UIAlertControllerStyleAlert];
+    
+    [alert1 addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [[UserDataManager shareManager] deleteUsernameAndPassword];
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:kUserDefaults_Student];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        [self presentViewController:[LoginViewController new]
+                           animated:YES
+                         completion:nil];
+    }]];
+    [alert1 addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+    }]];
+    
+    [self presentViewController:alert1 animated:YES completion:nil];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

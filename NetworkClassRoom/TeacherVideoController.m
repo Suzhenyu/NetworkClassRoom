@@ -9,11 +9,16 @@
 #import "TeacherVideoController.h"
 #import "Video.h"
 #import <MediaPlayer/MediaPlayer.h>
+#import <MobileCoreServices/MobileCoreServices.h>
+#import <AVFoundation/AVFoundation.h>
+#import "AFNetworking.h"
 
-@interface TeacherVideoController ()<UITableViewDataSource, UITableViewDelegate>
+@interface TeacherVideoController ()<UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 {
     NSMutableArray *_videoArray;
     int _index;
+    UIImagePickerController *_imagePickerController;
+    NSString *_videoName;
 }
 //播放器视图控制器
 @property (nonatomic,strong) MPMoviePlayerViewController *moviePlayerViewController;
@@ -37,12 +42,144 @@
                           action:@selector(uploadAction)
                 forControlEvents:UIControlEventTouchUpInside];
     self.tableView.tableFooterView = self.footView;
+    
+    _imagePickerController = [[UIImagePickerController alloc] init];
+    _imagePickerController.delegate = self;
+    _imagePickerController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    _imagePickerController.allowsEditing = YES;
 }
 
+/**
+ *  视频上传部分
+ */
 - (void)uploadAction {
+    
+    //UIAlertControllerStyleAlert 警示框
+    UIAlertController *alert1
+    = [UIAlertController alertControllerWithTitle:@"请输入视频名称"
+                                          message:nil
+                                   preferredStyle:UIAlertControllerStyleAlert];
+    [alert1 addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.placeholder = @"视频名称";
+    }];
+    [alert1 addAction:[UIAlertAction actionWithTitle:@"确定"
+                                               style:UIAlertActionStyleDefault
+                                             handler:^(UIAlertAction * _Nonnull action) {
+                                                 _videoName = [[alert1.textFields objectAtIndex:0] text];
+                                                 
+                                                 UIAlertController *alert
+                                                 = [UIAlertController alertControllerWithTitle:@"从哪里上传？"
+                                                                                       message:nil
+                                                                                preferredStyle:UIAlertControllerStyleActionSheet];
+                                                 
+                                                 [alert addAction:[UIAlertAction actionWithTitle:@"摄像头"
+                                                                                           style:UIAlertActionStyleDefault
+                                                                                         handler:^(UIAlertAction * _Nonnull action) {
+                                                                                             _imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
+                                                                                             _imagePickerController.videoMaximumDuration = 60;
+                                                                                                      _imagePickerController.mediaTypes = @[(NSString *)kUTTypeMovie,(NSString *)kUTTypeImage];
+                                                                                             _imagePickerController.videoQuality = UIImagePickerControllerQualityTypeHigh;
+                                                                                             
+                                                                                             //设置摄像头模式（拍照，录制视频）为录像模式
+                                                                                             _imagePickerController.cameraCaptureMode = UIImagePickerControllerCameraCaptureModeVideo;
+                                                                                             [self presentViewController:_imagePickerController animated:YES completion:nil];
+                                                                                             
+                                                                                         }]];
+                                                 [alert addAction:[UIAlertAction actionWithTitle:@"相册"
+                                                                                           style:UIAlertActionStyleDefault
+                                                                                         handler:^(UIAlertAction * _Nonnull action) {
+                                                                                             _imagePickerController.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+                                                                                             _imagePickerController.mediaTypes = @[(NSString *)kUTTypeMovie];
+                                                                                             
+                                                                                             [self presentViewController:_imagePickerController animated:YES completion:nil];
+                                                                                             
+                                                                                         }]];
+                                                 [alert addAction:[UIAlertAction actionWithTitle:@"取消"
+                                                                                           style:UIAlertActionStyleDestructive
+                                                                                         handler:^(UIAlertAction * _Nonnull action) {
+                                                                                         }]];
+                                                 
+                                                 [self presentViewController:alert animated:YES completion:nil];
+
+    }]];
+    [alert1 addAction:[UIAlertAction actionWithTitle:@"取消"
+                                               style:UIAlertActionStyleCancel
+                                             handler:nil]];
+    
+    [self presentViewController:alert1 animated:YES completion:nil];
     
 }
 
+#pragma mark UIImagePickerControllerDelegate
+//适用获取所有媒体资源，只需判断资源类型
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
+    NSString *mediaType=[info objectForKey:UIImagePickerControllerMediaType];
+    //判断资源类型
+    if ([mediaType isEqualToString:(NSString *)kUTTypeMovie]) {
+        NSURL *url = info[UIImagePickerControllerMediaURL];
+        //保存视频至相册（异步线程）
+        NSString *urlStr = [url path];
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            if (UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(urlStr)) {
+                UISaveVideoAtPathToSavedPhotosAlbum(urlStr, self, @selector(video:didFinishSavingWithError:contextInfo:), nil);
+            }
+        });
+        //上传视频
+        NSData *videoData = [NSData dataWithContentsOfURL:url];
+        [self uploadVideoWithData:videoData];
+    }
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark 视频保存完毕的回调
+- (void)video:(NSString *)videoPath didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInf{
+    if (error) {
+        NSLog(@"保存视频过程中发生错误，错误信息:%@",error.localizedDescription);
+    }else{
+        NSLog(@"视频保存成功.");
+    }
+}
+
+/**
+ *  上传视频
+ */
+- (void)uploadVideoWithData:(NSData *)data {
+    AFSecurityPolicy *securityPolicy = [[AFSecurityPolicy alloc] init];
+    [securityPolicy setAllowInvalidCertificates:YES];
+    
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    [manager setSecurityPolicy:securityPolicy];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    
+    NSString *urlString = @"http://121.42.162.159/api_upload.php";
+    
+    NSDictionary *param = @{@"video_name":_videoName,
+                            @"course_id":[NSString stringWithFormat:@"%i",self.course_id]};
+    
+    [manager POST:urlString parameters:param constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+        
+        [formData appendPartWithFileData:data
+                                    name:@"attach"
+                                fileName:_videoName
+                                mimeType:@"application/octet-stream"];
+        
+    } progress:^(NSProgress * _Nonnull uploadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"上传成功");
+        NSArray *dic = [NSJSONSerialization JSONObjectWithData:responseObject
+                                                       options:NSJSONReadingMutableLeaves
+                                                         error:nil];
+        NSLog(@"%@",dic);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"上传失败,%@.",error);
+    }];
+}
+
+/**
+ *  视频播放部分
+ */
 - (void)dealloc {
     //移除所有通知监控
     [[NSNotificationCenter defaultCenter] removeObserver:self];
@@ -54,9 +191,11 @@
  *  @return 文件路径
  */
 -(NSURL *)getNetworkUrlWithIndex:(int)index {
+    
     Video *video = _videoArray[index];
     
-    NSString *urlStr=video.video_url;
+    NSString *urlStr
+    = [video.video_url stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     NSURL *url=[NSURL URLWithString:urlStr];
     return url;
 }

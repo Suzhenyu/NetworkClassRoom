@@ -27,8 +27,6 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
-//    [[UserDataManager shareManager] deleteUsernameAndPassword];
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
@@ -58,6 +56,10 @@
             StudentMeController *meControl = [StudentMeController new];
             meControl.tabBarItem.title = @"我的";
             
+            courseControl.tabBarItem.image = [UIImage imageNamed:@"course"];
+            operationControl.tabBarItem.image = [UIImage imageNamed:@"operation"];
+            meControl.tabBarItem.image = [UIImage imageNamed:@"me"];
+            
             UITabBarController *tabbarControl = [[UITabBarController alloc] init];
             tabbarControl.viewControllers = @[courseControl, operationControl, meControl];
             
@@ -70,6 +72,10 @@
             operationControl.tabBarItem.title = @"作业";
             TeacherMeViewController *meControl = [TeacherMeViewController new];
             meControl.tabBarItem.title = @"我的";
+            
+            courseControl.tabBarItem.image = [UIImage imageNamed:@"course"];
+            operationControl.tabBarItem.image = [UIImage imageNamed:@"operation"];
+            meControl.tabBarItem.image = [UIImage imageNamed:@"me"];
             
             UITabBarController *tabbarControl = [[UITabBarController alloc] init];
             tabbarControl.viewControllers = @[courseControl, operationControl, meControl];

@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TeacherMeViewController">
             <connections>
+                <outlet property="nameLabel" destination="MsB-ez-Pj5" id="wCn-4q-Ay0"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -13,8 +15,52 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="head" translatesAutoresizingMaskIntoConstraints="NO" id="Ed0-hT-NwE">
+                    <rect key="frame" x="250" y="94" width="100" height="100"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="EOm-QI-JDt"/>
+                        <constraint firstAttribute="height" constant="100" id="Fpq-4t-IA0"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名字" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MsB-ez-Pj5">
+                    <rect key="frame" x="249" y="224" width="103" height="31"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="31" id="i7a-QX-KFh"/>
+                        <constraint firstAttribute="width" constant="103" id="zOw-c3-vlK"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="io8-Gu-CXL">
+                    <rect key="frame" x="270" y="500" width="60" height="30"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="QZA-Se-oeH"/>
+                        <constraint firstAttribute="width" constant="60" id="kBC-8O-PKR"/>
+                    </constraints>
+                    <state key="normal" title="退出登录"/>
+                    <connections>
+                        <action selector="leaveloginAction:" destination="-1" eventType="touchUpInside" id="zZN-En-gl8"/>
+                    </connections>
+                </button>
+            </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="io8-Gu-CXL" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="4d8-Sj-2OV"/>
+                <constraint firstItem="MsB-ez-Pj5" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="5rJ-XM-oV7"/>
+                <constraint firstItem="Ed0-hT-NwE" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="94" id="Hhb-qt-R3R"/>
+                <constraint firstItem="MsB-ez-Pj5" firstAttribute="top" secondItem="Ed0-hT-NwE" secondAttribute="bottom" constant="30" id="Y23-ZE-Jdp"/>
+                <constraint firstAttribute="bottom" secondItem="io8-Gu-CXL" secondAttribute="bottom" constant="70" id="kdo-8N-z8k"/>
+                <constraint firstItem="Ed0-hT-NwE" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="vMN-PS-kGY"/>
+            </constraints>
         </view>
     </objects>
+    <resources>
+        <image name="head" width="30" height="30"/>
+    </resources>
 </document>
