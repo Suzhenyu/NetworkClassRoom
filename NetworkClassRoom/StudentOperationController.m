@@ -10,9 +10,12 @@
 #import <RongIMKit/RongIMKit.h>
 #import <CommonCrypto/CommonDigest.h>
 #import "Student.h"
+#import "SelectChatController.h"
 
 @interface StudentOperationController ()<RCIMUserInfoDataSource>
-
+{
+    RCConversationModel *_model;
+}
 @end
 
 @implementation StudentOperationController
@@ -35,12 +38,17 @@
     [self setCollectionConversationType:@[@(ConversationType_DISCUSSION),
                                           @(ConversationType_GROUP)]];
     
-//    UIBarButtonItem *rightItem
-//    = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"chat"]
-//                                       style:UIBarButtonItemStylePlain
-//                                      target:self
-//                                      action:@selector(gotoSelectChatAction)];
-//    self.tabBarController.navigationItem.rightBarButtonItem = rightItem;
+    UIBarButtonItem *rightItem
+    = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"chat"]
+                                       style:UIBarButtonItemStylePlain
+                                      target:self
+                                      action:@selector(gotoSelectChatAction)];
+    self.tabBarController.navigationItem.rightBarButtonItem = rightItem;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(addChat:)
+                                                 name:@"TargetId"
+                                               object:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -50,7 +58,8 @@
 }
 
 - (void)gotoSelectChatAction {
-    
+    SelectChatController *control = [[SelectChatController alloc] init];
+    [self.navigationController pushViewController:control animated:YES];
 }
 
 - (void)onSelectedTableRow:(RCConversationModelType)conversationModelType
@@ -80,7 +89,7 @@
     
     NSString *appKey = RONGYUN_APPKEY;
     NSString * nonce = [NSString stringWithFormat:@"%d",arc4random()];
-    NSString * timestamp = [[NSString alloc] initWithFormat:@"%ld",(NSInteger)[NSDate timeIntervalSinceReferenceDate]];
+    NSString * timestamp = [[NSString alloc] initWithFormat:@"%ld",(long)[NSDate timeIntervalSinceReferenceDate]];
     NSString *appSec = RONGYUN_APPSER;
     NSString *signature = [self sha1:[NSString stringWithFormat:@"%@%@%@",appSec,nonce,timestamp]];
     //设置请求头
@@ -177,6 +186,22 @@
         [output appendFormat:@"%02x", digest[i]];
     
     return output;
+}
+
+
+- (NSMutableArray *)willReloadTableData:(NSMutableArray *)dataSource {
+    if (_model != nil) {
+        [dataSource addObject:_model];
+        _model = nil;
+    }
+    return dataSource;
+}
+
+-(void)addChat:(NSNotification*)notification{
+    _model = [[RCConversationModel alloc] init];
+    RCUserInfo *user = notification.object;
+    _model.targetId = user.userId;
+    _model.conversationTitle = user.name;
 }
 
 @end

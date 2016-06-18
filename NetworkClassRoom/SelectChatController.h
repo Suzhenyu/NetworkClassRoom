@@ -1,5 +1,5 @@
 //
-//  ChatCell.h
+//  SelectChatController.h
 //  Rongyun_Demo1
 //
 //  Created by apple on 16/6/18.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ChatCell : UICollectionViewCell
-
-@property (nonatomic, strong) UILabel *lbChannel;
+@interface SelectChatController : UIViewController
 
 @end

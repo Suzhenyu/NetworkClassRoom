@@ -1,28 +1,16 @@
 //
 //  ChatCell.m
-//  NetworkClassRoom
+//  Rongyun_Demo1
 //
-//  Created by apple on 16/6/13.
+//  Created by apple on 16/6/18.
 //  Copyright © 2016年 apple. All rights reserved.
 //
 
 #import "ChatCell.h"
 
-static const int kText_Font_Size = 14;           //设置item中标签文字字号
-
-static const float kHeadImageViewWidth = 30;
-static const float kHeadImageViewHeight = kHeadImageViewWidth;
-static const float kNameLabelWidth = kHeadImageViewWidth;
-static const float kNameLabelHeight = 20;
-
-@interface ChatCell ()
-
-@property (nonatomic, strong) UILabel *nameLabel;
-@property (nonatomic, strong) UIImageView *headImageView;
-
-@end
-
 @implementation ChatCell
+
+static const int kText_Font_Size = 14;           //设置item中标签文字字号
 
 -(instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
@@ -41,27 +29,13 @@ static const float kNameLabelHeight = 20;
 }
 
 -(void)addUIControls {
-    _headImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, kHeadImageViewWidth, kHeadImageViewHeight)];
-    [self.contentView addSubview:_headImageView];
+    _lbChannel = [[UILabel alloc] initWithFrame:self.bounds];
+    _lbChannel.backgroundColor = [UIColor whiteColor];
+    _lbChannel.textColor = [UIColor blackColor];
+    _lbChannel.textAlignment = NSTextAlignmentCenter;
+    _lbChannel.font = [UIFont systemFontOfSize:kText_Font_Size];
     
-    _nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_headImageView.frame), kNameLabelWidth, kNameLabelHeight)];
-    _nameLabel.backgroundColor = [UIColor whiteColor];
-    _nameLabel.textColor = [UIColor blackColor];
-    _nameLabel.textAlignment = NSTextAlignmentCenter;
-    _nameLabel.font = [UIFont systemFontOfSize:kText_Font_Size];
-    [self.contentView addSubview:_nameLabel];
-}
-
-- (void)setChatName:(NSString *)name {
-    _nameLabel.text = name;
-}
-
-- (void)setChatImage:(UIImage *)image {
-    _headImageView.image = image;
-}
-
-+ (CGSize)cellSize {
-    return CGSizeMake(kHeadImageViewWidth, kHeadImageViewHeight + kNameLabelHeight);
+    [self.contentView addSubview:_lbChannel];
 }
 
 @end
