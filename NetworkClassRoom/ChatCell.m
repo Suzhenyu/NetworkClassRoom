@@ -10,7 +10,7 @@
 
 @implementation ChatCell
 
-static const int kText_Font_Size = 14;           //设置item中标签文字字号
+static const int kText_Font_Size = 16;           //设置item中标签文字字号
 
 -(instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
@@ -30,8 +30,8 @@ static const int kText_Font_Size = 14;           //设置item中标签文字字�
 
 -(void)addUIControls {
     _lbChannel = [[UILabel alloc] initWithFrame:self.bounds];
-    _lbChannel.backgroundColor = [UIColor whiteColor];
-    _lbChannel.textColor = [UIColor blackColor];
+    _lbChannel.backgroundColor = [UIColor orangeColor];
+    _lbChannel.textColor = [UIColor whiteColor];
     _lbChannel.textAlignment = NSTextAlignmentCenter;
     _lbChannel.font = [UIFont systemFontOfSize:kText_Font_Size];
     

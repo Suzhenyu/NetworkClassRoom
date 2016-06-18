@@ -34,6 +34,8 @@
     [super viewDidAppear:animated];
     
     self.tabBarController.title = @"全部课程";
+    
+    self.tabBarController.navigationItem.rightBarButtonItem = nil;
 }
 
 #pragma mark- request course date

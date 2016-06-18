@@ -31,6 +31,8 @@
     [super viewDidAppear:animated];
     
     self.tabBarController.title = @"用户中心";
+    
+    self.tabBarController.navigationItem.rightBarButtonItem = nil;
 }
 - (IBAction)leaveloginAction:(id)sender {
 

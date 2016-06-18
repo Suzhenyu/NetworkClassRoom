@@ -67,27 +67,39 @@ static NSString *kSupplementary_Footer_Id = @"supplementaryFooterId";
 - (void)requestChatInfo {
     RCUserInfo *user1 = [[RCUserInfo alloc]init];
     user1.userId = @"t1";
-    user1.name = @"孙丽珺";
-    user1.portraitUri = @"https://ss0.baidu.com/73t1bjeh1BF3odCf/it/u=1756054607,4047938258&fm=96&s=94D712D20AA1875519EB37BE0300C008";
+    user1.name = @"孙老师";
+    user1.portraitUri = @"http://121.42.162.159/upload/t1.png";
     [_chatArray addObject:user1];
     
     RCUserInfo *user2 = [[RCUserInfo alloc]init];
     user2.userId = @"t2";
-    user2.name = @"陈琦";
-    user2.portraitUri = @"http://121.42.162.159/upload/123.png";
+    user2.name = @"陈老师";
+    user2.portraitUri = @"http://121.42.162.159/upload/t2.png";
     [_chatArray addObject:user2];
     
     RCUserInfo *user3 = [[RCUserInfo alloc]init];
     user3.userId = @"t3";
-    user3.name = @"李勤";
-    user3.portraitUri = @"http://121.42.162.159/upload/123.png";
+    user3.name = @"李老师";
+    user3.portraitUri = @"http://121.42.162.159/upload/t3.png";
     [_chatArray addObject:user3];
     
     RCUserInfo *user4 = [[RCUserInfo alloc]init];
     user4.userId = @"s1";
-    user4.name = @"宿振宇";
-    user4.portraitUri = @"http://121.42.162.159/upload/123.png";
+    user4.name = @"赵同学";
+    user4.portraitUri = @"http://121.42.162.159/upload/s1.png";
     [_chatArray addObject:user4];
+    
+    RCUserInfo *user5 = [[RCUserInfo alloc]init];
+    user5.userId = @"s2";
+    user5.name = @"钱同学";
+    user5.portraitUri = @"http://121.42.162.159/upload/s2.png";
+    [_chatArray addObject:user5];
+    
+    RCUserInfo *user6 = [[RCUserInfo alloc]init];
+    user6.userId = @"s3";
+    user6.name = @"孙同学";
+    user6.portraitUri = @"http://121.42.162.159/upload/s3.png";
+    [_chatArray addObject:user6];
 }
 
 #pragma mark- UICollectionViewDataSource
